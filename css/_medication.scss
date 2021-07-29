@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero-txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.hero-medication-color {
+  color: $medication-color;
+  font-weight: 600;
+}
+
+.pill-img {
+  width: 10%;
+}
+
+.medication-form {
+  margin: 3rem 0 0;
+  width: 50vh;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.form-control {
+  height: 2rem;
+}
+
+.addmedication-btn {
+  width: 100%;
+  height: 3rem;
+  background-color: $medication-color;
+  border: 0;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#search {
+  height: 3rem;
+  padding-left: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.display-table {
+  font-size: 0.9rem;
+
+  th {
+    padding: 0.5rem 2rem;
+    border-color: grey;
+    border-width: 1px;
+    border-style: dashed;
+    border-left: 0;
+    border-right: 0;
+  }
+}
+
+#medication-list {
+  td {
+    text-align: center;
+    padding: 1rem 0;
+  }
+}
+
+.btn-delete {
+  color: red;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+.btn-edit {
+  color: $medication-color;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-right: 20px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="img/5728180_antivirus_capsule_medical_pill_virus_icon 1 (1).svg"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>MyMedicationTracker</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="hero-txt">
+        <img
+          src="img/5728180_antivirus_capsule_medical_pill_virus_icon 1 (1).svg"
+          alt=""
+          class="pill-img"
+        />My<span class="hero-medication-color">Medication</span>Tracker
+      </h1>
+      <form id="medication-form" class="medication-form">
+        <div class="form-group">
+          <label for="identifier">Identifier</label>
+          <input type="number" id="identifier" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="medication">Medication Name</label>
+          <input type="text" id="medication" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="dose">Daily Dose</label>
+          <input type="text" id="dose" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="repeats">Number of Repeats</label>
+          <input type="number" id="repeats" class="form-control" />
+        </div>
+        <input type="submit" value="Add Medication" class="addmedication-btn" />
+        <div class="form-group">
+          <input
+            type="text"
+            id="search"
+            class=""
+            placeholder="Search Medication by Name"
+          />
+        </div>
+        <!-- <input type="submit" value="Search" class="search" /> -->
+      </form>
+      <table class="display-table">
+        <thead>
+          <tr>
+            <th>Identifier</th>
+            <th>Medication Name</th>
+            <th>Daily Dose</th>
+            <th>Number of Repeats</th>
+          </tr>
+        </thead>
+        <tbody id="medication-list"></tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
