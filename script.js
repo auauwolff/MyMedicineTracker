@@ -15,13 +15,13 @@ var UI = /** @class */ (function () {
             {
                 id: 123,
                 name: "Beozepan",
-                dose: "26/07/2021",
+                dose: 1,
                 doseRepeat: 4
             },
             {
                 id: 456,
                 name: "Sarapan",
-                dose: "25/07/2021",
+                dose: 2,
                 doseRepeat: 2
             },
         ];
@@ -31,19 +31,19 @@ var UI = /** @class */ (function () {
     UI.addMedicationToList = function (medication) {
         var list = document.querySelector("#medication-list");
         var row = document.createElement("tr");
-        row.innerHTML = "\n      <td id=\"info1\">" + medication.id + "</td>\n      <td id=\"info2\">" + medication.name + "</td>\n      <td id=\"info3\">" + medication.dose + "</td>\n      <td id=\"info4\">" + medication.doseRepeat + "</td>\n      <td ><a href=\"#\" class=\"btn-edit\" id=\"btn-edit\"  >&#9998;</a></td>\n      <td><a href=\"#\" class=\"btn-delete\"  >X</a></td>\n      ";
+        row.innerHTML = "\n      <td>" + medication.id + "</td>\n      <td>" + medication.name + "</td>\n      <td>" + medication.dose + "</td>\n      <td >" + medication.doseRepeat + "</td>\n      <td ><a href=\"#\" class=\"btn-edit\" id=\"btn-edit\"  >&#9998;</a></td>\n      <td><a href=\"#\" class=\"btn-delete\"  >X</a></td>\n      ";
         list.appendChild(row);
     };
-    UI.editMedication = function (btn, no1, no2, no3, no4) {
+    UI.editMedication = function (btn) {
         if (btn.classList.contains("btn-edit")) {
-            var info1 = document.querySelector("#info1");
-            var info2 = document.querySelector("#info2");
-            var info3 = document.querySelector("#info3");
-            var info4 = document.querySelector("#info4");
-            no1 = info1.contentEditable = "true";
-            no2 = info2.contentEditable = "true";
-            no3 = info3.contentEditable = "true";
-            no4 = info4.contentEditable = "true";
+            var b = btn.parentElement.parentElement.children[0];
+            var c = btn.parentElement.parentElement.children[1];
+            var d = btn.parentElement.parentElement.children[2];
+            var e = btn.parentElement.parentElement.children[3];
+            b.contentEditable = "true";
+            c.contentEditable = "true";
+            d.contentEditable = "true";
+            e.contentEditable = "true";
             alert("Select the table to Edit");
         }
     };
@@ -84,7 +84,7 @@ document.querySelector("#medication-form").addEventListener("submit", function (
     }
     else {
         //Instatiate Medication
-        var medication = new Medication(identifier.valueAsNumber, medicationName.value, dose.value, repeats.valueAsNumber);
+        var medication = new Medication(identifier.valueAsNumber, medicationName.value, dose.valueAsNumber, repeats.valueAsNumber);
         //Add Medication to UI
         UI.addMedicationToList(medication);
         alert("Medication Add to the List!");
@@ -98,7 +98,6 @@ document.querySelector("#medication-list").addEventListener("click", function (e
 });
 document.querySelector("#medication-list").addEventListener("click", function (e) {
     UI.editMedication(e.target);
-    // console.log(e.target);
 });
 //Search Input
 var searchInput = document.querySelector("#search");
@@ -114,10 +113,5 @@ searchInput.addEventListener("keyup", function (e) {
         else {
             row.style.display = "none";
         }
-        console.log(medication);
     });
 });
-//Edit
-// const medicationList = document.querySelector("#medication-list").addEventListener("click", (e) => {
-//     console.log(e);
-//   });

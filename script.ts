@@ -1,17 +1,17 @@
 interface NewMedication {
   id: number;
   name: string;
-  dose: string;
+  dose: number;
   doseRepeat: number;
 }
 
 class Medication implements NewMedication {
   id: number;
   name: string;
-  dose: string;
+  dose: number;
   doseRepeat: number;
 
-  constructor(id: number, name: string, dose: string, doseRepeat: number) {
+  constructor(id: number, name: string, dose: number, doseRepeat: number) {
     this.id = id;
     this.name = name;
     this.dose = dose;
@@ -25,13 +25,13 @@ class UI {
       {
         id: 123,
         name: "Beozepan",
-        dose: "26/07/2021",
+        dose: 1,
         doseRepeat: 4,
       },
       {
         id: 456,
         name: "Sarapan",
-        dose: "25/07/2021",
+        dose: 2,
         doseRepeat: 2,
       },
     ];
@@ -47,10 +47,10 @@ class UI {
     const row = document.createElement("tr");
 
     row.innerHTML = `
-      <td id="info1">${medication.id}</td>
-      <td id="info2">${medication.name}</td>
-      <td id="info3">${medication.dose}</td>
-      <td id="info4">${medication.doseRepeat}</td>
+      <td>${medication.id}</td>
+      <td>${medication.name}</td>
+      <td>${medication.dose}</td>
+      <td >${medication.doseRepeat}</td>
       <td ><a href="#" class="btn-edit" id="btn-edit"  >&#9998;</a></td>
       <td><a href="#" class="btn-delete"  >X</a></td>
       `;
@@ -58,16 +58,16 @@ class UI {
     list.appendChild(row);
   }
 
-  static editMedication(btn, no1?, no2?, no3?, no4?) {
+  static editMedication(btn) {
     if (btn.classList.contains("btn-edit")) {
-      const info1 = document.querySelector("#info1") as HTMLTableElement;
-      const info2 = document.querySelector("#info2") as HTMLTableElement;
-      const info3 = document.querySelector("#info3") as HTMLTableElement;
-      const info4 = document.querySelector("#info4") as HTMLTableElement;
-      no1 = info1.contentEditable = "true";
-      no2 = info2.contentEditable = "true";
-      no3 = info3.contentEditable = "true";
-      no4 = info4.contentEditable = "true";
+      const b = btn.parentElement.parentElement.children[0];
+      const c = btn.parentElement.parentElement.children[1];
+      const d = btn.parentElement.parentElement.children[2];
+      const e = btn.parentElement.parentElement.children[3];
+      b.contentEditable = "true";
+      c.contentEditable = "true";
+      d.contentEditable = "true";
+      e.contentEditable = "true";
       alert("Select the table to Edit");
     }
   }
@@ -78,8 +78,6 @@ class UI {
       alert("Medication Removed from the List");
     }
   }
-
-  static searchMedication;
 
   static clearFields() {
     const i = document.querySelector("#identifier") as HTMLInputElement;
@@ -120,7 +118,7 @@ document.querySelector("#medication-form").addEventListener("submit", (e) => {
     const medication = new Medication(
       identifier.valueAsNumber,
       medicationName.value,
-      dose.value,
+      dose.valueAsNumber,
       repeats.valueAsNumber
     );
 
@@ -135,12 +133,10 @@ document.querySelector("#medication-form").addEventListener("submit", (e) => {
 //Remove Medication
 document.querySelector("#medication-list").addEventListener("click", (e) => {
   UI.deleteMedication(e.target);
-
 });
 
 document.querySelector("#medication-list").addEventListener("click", (e) => {
   UI.editMedication(e.target);
-  // console.log(e.target);
 });
 
 //Search Input
@@ -156,14 +152,5 @@ searchInput.addEventListener("keyup", (e) => {
     } else {
       (row as HTMLTextAreaElement).style.display = "none";
     }
-
-    console.log(medication);
   });
 });
-
-//Edit
-
-// const medicationList = document.querySelector("#medication-list").addEventListener("click", (e) => {
-
-//     console.log(e);
-//   });

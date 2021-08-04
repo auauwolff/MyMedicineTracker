@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="img/7436245_appointment_calendar_health care_checkup_schedule_icon 1.svg"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>MyAppointmentTracker</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="hero-txt">
+        <img
+          src="img/7436245_appointment_calendar_health care_checkup_schedule_icon 1.svg"
+          alt=""
+          class="appointment-img"
+        />My<span class="hero-medication-color">Appointment</span>Tracker
+      </h1>
+      <h2 class="txt-gpavailable">
+        Choose an available GP to book an appointment:
+      </h2>
+      <form id="appointment-form" class="appointment-form">
+        <div class="form-group">
+          <input
+            type="text"
+            id="search"
+            class=""
+            placeholder="Search Appointment by GP"
+          />
+        </div>
+      </form>
+      <table class="display-table">
+        <thead>
+          <tr>
+            <th>Identifier</th>
+            <th>GP</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="appointment-list"></tbody>
+      </table>
+      <h2 class="txt-mybooking">My bookings list:</h2>
+      <table class="display-table">
+        <thead>
+          <tr>
+            <th>Identifier</th>
+            <th>GP</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="user-list"></tbody>
+      </table>
+      <a href="/medication.html" class="a-medication">
+        <img
+          src="img/5728180_antivirus_capsule_medical_pill_virus_icon 1 (1).svg"
+          alt=""
+          class="apill-img"
+      /></a>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

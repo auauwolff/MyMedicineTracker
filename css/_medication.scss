@@ -91,3 +91,19 @@
   font-weight: bold;
   padding-right: 20px;
 }
+
+.a-appoitment {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+
+  &:hover {
+    transform: translateY(-10px);
+    transition: 1s;
+  }
+}
+
+.app-img {
+  margin: 5rem 0 0;
+  width: 60%;
+}

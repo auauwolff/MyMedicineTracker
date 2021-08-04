@@ -1,0 +1,63 @@
+.appointment-img {
+  width: 20%;
+}
+
+.txt-gpavailable {
+  padding: 3rem 3rem 0;
+  text-align: center;
+}
+
+.appointment-form {
+  margin: 0;
+  width: 50vh;
+}
+
+.txt-mybooking {
+  margin: 5rem 0 2rem;
+}
+
+#appointment-list {
+  td {
+    text-align: center;
+    padding: 1rem 0;
+  }
+}
+
+#user-list {
+  td {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .btn-book {
+    color: red;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-right: 20px;
+  }
+}
+
+.btn-book {
+  color: $medication-color;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+.a-medication {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+
+  &:hover {
+    transform: translateY(-10px);
+    transition: 1s;
+  }
+}
+
+.apill-img {
+  margin: 10rem 0 0;
+  width: 30%;
+}
